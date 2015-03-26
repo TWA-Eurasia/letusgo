@@ -13,9 +13,17 @@ gulp.task('less_compiler', function () {
     .pipe(gulp.dest('.tmp/styles'));
 });
 
+gulp.task('htmlc', function () {
+
+  return gulp.src('view/*.jade')
+    .pipe(less())
+    .pipe(gulp.dest('.tmp/views'));
+});
+
+
 gulp.task('clean', del.bind(null, ['.tmp']));
 
-gulp.task('serve', ['less_compiler'], function () {
+gulp.task('serve', ['less_compiler','htmlc'], function () {
 
   browserSync({
     notify: false,
@@ -30,8 +38,10 @@ gulp.task('serve', ['less_compiler'], function () {
   });
 
   gulp.watch([
-    'public/styles/**/*.less'
+    'public/styles/**/*.less',
+    'view/*.jade'
   ]).on('change', reload);
 
   gulp.watch('public/styles/**/*.less', ['less_compiler', reload]);
+  gulp.watch('view/*.jade',['htmlc', reload]);
 });

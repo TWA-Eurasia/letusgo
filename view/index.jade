@@ -6,14 +6,33 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
     link(rel="stylesheet" type="text/css" href="semantic-ui/dist/semantic.css")
-    link(rel="stylesheet" type="text/css" href="styles/main.css")
+    link(rel="stylesheet" type="text/css" href="style/homepage.css")
+
 
     script(src="jquery/dist/jquery.js")
     script(src="semantic-ui/dist/semantic.js")
   body#home
     header
-      h5#logo  欢迎光临来此购网上购物商城
+     div.topmenu
+       ul.menu
+         li
+           div.topleft
+           em.
+            Hi，欢迎来到Let Us Go商城
+           a.topbutton(href="#") 请登录
+           a.topbutton(href="#") 免费注册
+         li
+           div.topright
+           a.topbutton(href="#") 我的Let Us Go
     div.container
+      div.searchcontainer
+        div.mylogo
+          img(src= "image/logo.png")
+        div.search
+          div.ui.fluid.action.input
+            input.topsearch(type="text" placeholder="Search...")
+            button.ui.icon.button
+              i.search.icon
       div.ui.inverted.masthead.segment
         include ./viewModule/navBar.jade
         div(class="ui page grid")
