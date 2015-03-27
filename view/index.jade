@@ -16,23 +16,29 @@ html(lang="en")
      div.topmenu
        ul.menu
          li
-           div.topleft
            em.
             Hi，欢迎来到Let Us Go商城
            a.topbutton(href="#") 请登录
            a.topbutton(href="#") 免费注册
          li
-           div.topright
-           a.topbutton(href="#") 我的Let Us Go
+           a.topbutton.right(href="#") 我的Let Us Go
     div.container
       div.searchcontainer
-        div.mylogo
-          img(src= "image/logo.png")
+        //div.mylogo
+        //  img(src= "image/logo.png")
         div.search
           div.ui.fluid.action.input
             input.topsearch(type="text" placeholder="Search...")
             button.ui.icon.button
               i.search.icon
+      //div.searchcontainer
+      //  div.mylogo
+      //    img(src= "image/logo.png")
+      //  div.search
+      //    div.ui.fluid.action.input
+      //      input.topsearch(type="text" placeholder="Search...")
+      //      button.ui.icon.button
+      //        i.search.icon
       div.ui.inverted.masthead.segment
         include ./viewModule/navBar.jade
         div(class="ui page grid")
